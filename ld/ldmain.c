@@ -1313,7 +1313,7 @@ undefined_symbol (struct bfd_link_info *info,
       if (error_count < MAX_ERRORS_IN_A_ROW)
 	{
 	  if (error)
-	    einfo (_("%X%C: undefined reference to `%T'\n"),
+	    einfo (_("%X%C: YYY undefined reference to `%T'\n"),
 		   abfd, section, address, name);
 	  else
 	    einfo (_("%C: warning: undefined reference to `%T'\n"),

@@ -493,6 +493,7 @@ bfd_link_hash_lookup (struct bfd_link_hash_table *table,
 		      bfd_boolean copy,
 		      bfd_boolean follow)
 {
+  printf("YYY lookup %s\n", string);
   struct bfd_link_hash_entry *ret;
 
   ret = ((struct bfd_link_hash_entry *)

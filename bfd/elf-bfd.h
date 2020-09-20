@@ -2766,11 +2766,13 @@ extern asection _bfd_elf_large_com_section;
 	  bfd_boolean err;						\
 	  err = (info->unresolved_syms_in_objects == RM_GENERATE_ERROR	\
 		 || ELF_ST_VISIBILITY (h->other) != STV_DEFAULT);	\
+    printf(">\n"); \
 	  (*info->callbacks->undefined_symbol) (info,			\
 						h->root.root.string,	\
 						input_bfd,		\
 						input_section,		\
 						rel->r_offset, err);	\
+    printf("<\n"); \
 	  warned = TRUE;						\
 	}								\
       (void) unresolved_reloc;						\

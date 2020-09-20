@@ -8114,6 +8114,7 @@ resolve_symbol (const char *name,
 		Elf_Internal_Sym *isymbuf,
 		size_t locsymcount)
 {
+  printf("YYY name: %s\n", name);
   Elf_Internal_Sym *sym;
   struct bfd_link_hash_entry *global_entry;
   const char *candidate = NULL;
@@ -9610,12 +9611,14 @@ elf_link_output_extsym (struct bfd_hash_entry *bh, void *data)
 	  && h->ref_dynamic
 	  && (!h->ref_regular || flinfo->info->gc_sections)
 	  && !elf_link_check_versioned_symbol (flinfo->info, bed, h)
-	  && flinfo->info->unresolved_syms_in_shared_libs != RM_IGNORE)
+	  && flinfo->info->unresolved_syms_in_shared_libs != RM_IGNORE) {
+        printf("YYY upper name: %s\n", h->root.root.string);
 	(*flinfo->info->callbacks->undefined_symbol)
 	  (flinfo->info, h->root.root.string,
 	   h->ref_regular ? NULL : h->root.u.undef.abfd,
 	   NULL, 0,
 	   flinfo->info->unresolved_syms_in_shared_libs == RM_GENERATE_ERROR);
+      }
 
       /* Strip a global symbol defined in a discarded section.  */
       if (h->indx == -3)
